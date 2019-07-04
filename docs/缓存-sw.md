@@ -4,13 +4,13 @@
 
 是浏览器在后台**独立于网页**运行的脚本，一个单独的worker线程，拥有自己独立的 worker context.
 
-![image-20190701103038844](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701103038844.png)
+![image-20190701103038844](./images/image-20190701103038844.png)
 
 也可以理解为一种网络代理服务器，可编程拦截代理请求和返回，缓存文件。
 
 
 
-![image-20190701103017367](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701103017367.png)
+![image-20190701103017367](./images/image-20190701103017367.png)
 
 
 
@@ -42,7 +42,7 @@
 
 Service Worker 的生命周期**完全独立于网页**。
 
-![image-20190702164753542](/Users/qiangran/Library/Application Support/typora-user-images/image-20190702164753542.png)
+![image-20190702164753542](./images/image-20190702164753542.png)
 
 #####首次注册
 
@@ -89,7 +89,7 @@ Service Worker 将会**对其作用域内**的所有页面实施控制，不过�
 
 #### 浏览器兼容性
 
-![image-20190701115224824](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701115224824.png)
+![image-20190701115224824](./images/image-20190701115224824.png)
 
 #### chrome调试
 
@@ -213,25 +213,25 @@ if (workbox) {
 
 1 console:打印注册成功的信息
 
-![image-20190701162107852](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701162107852.png) 
+![image-20190701162107852](./images/image-20190701162107852.png) 
 
 2 network:和平时访问没有区别，只是加载了一些workbox的依赖
 
-![image-20190701162057450](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701162057450.png)
+![image-20190701162057450](./images/image-20190701162057450.png)
 
 3 appliaction:显示注册的SW信息
 
-![image-20190701162549867](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701162549867.png)
+![image-20190701162549867](./images/image-20190701162549867.png)
 
 ##### 再次刷新
 
 1 console ：
 
-![image-20190701162427140](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701162427140.png)
+![image-20190701162427140](./images/image-20190701162427140.png)
 
 2 network：全部的 css、png、js 文件均被 ServiceWorker 拦截（图中 from ServiceWorker 可以看出）
 
-![image-20190701162156642](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701162156642.png)
+![image-20190701162156642](./images/image-20190701162156642.png)
 
 
 
@@ -239,7 +239,7 @@ if (workbox) {
 
 1 console: 
 
-![image-20190701163751535](/Users/qiangran/Library/Application Support/typora-user-images/image-20190701163751535.png)
+![image-20190701163751535](./images/image-20190701163751535.png)
 
 - 由于 png 是 Cache First，所以直接从 ServiceWorker 的 Cache 返回，没有真正的网络请求发出
 - 由于 js 是 Network First，所以会产生 fetch，且运行成功（底部 Console 有输出内容）
@@ -265,11 +265,11 @@ if (workbox) {
 
 chrome—appliaction-勾选 offline
 
-![image-20190704112539872](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704112539872.png)
+![image-20190704112539872](./images/image-20190704112539872.png)
 
 刷新页面
 
-![image-20190704112655119](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704112655119.png)
+![image-20190704112655119](./images/image-20190704112655119.png)
 
 页面正常返回 噢耶！！！
 
@@ -303,7 +303,7 @@ workbox.precaching.precacheAndRoute([
 
 4 PC 浏览器 每个TAB都是一个client ，维护独自的 cache Storage
 
-  ![image-20190703181337852](/Users/qiangran/Library/Application Support/typora-user-images/image-20190703181337852.png)
+  ![image-20190703181337852](./images/image-20190703181337852.png)
 
 5  不透明响应
 
@@ -317,7 +317,7 @@ workbox.precaching.precacheAndRoute([
 
 7 容量
 
-![image-20190704113330318](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704113330318.png)
+![image-20190704113330318](./images/image-20190704113330318.png)
 
 ### 其它
 

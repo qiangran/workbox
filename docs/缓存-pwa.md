@@ -10,7 +10,7 @@
 
 #### 第二问：PWA的特点有哪些
 
-![image-20190627174905041](/Users/qiangran/Library/Application Support/typora-user-images/image-20190627174905041.png)
+![image-20190627174905041](./images/image-20190627174905041.png)
 
 ####第三问：为什么要使用PWA
 
@@ -40,33 +40,33 @@ W3C和谷歌看到了这些问题，于是推出了`PWA`。其目标就是提升
 
 > Cache-First策略会在有缓存的时候返回缓存，没有缓存才会去请求并且把请求结果缓存。也就是说，第一次页面加载跟普通页面加载没有任何区别的，第二次访问的资源是直接走了本地缓存数据的。
 
-![image-20190704140923982](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704140923982.png)
+![image-20190704140923982](./images/image-20190704140923982.png)
 
-![image-20190704140937346](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704140937346.png)
+![image-20190704140937346](./images/image-20190704140937346.png)
 
 **network-first**
 
 > network-first 是一个比较复杂的策略。资源优先走网络，成功以后会把资源添加到缓存里面，当发现网失败就会回退读取缓存。这里面有一个点就是，多长时间算网络请求失败？这时候就需要配置一个超时时间，如果不配置回退缓存的时间就会比较长。这个时间根据自身项目而定。
 
-![image-20190704141115318](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704141115318.png)
+![image-20190704141115318](./images/image-20190704141115318.png)
 
 **stale-while-revalidate**
 
 > 这种策略比较接近cache-first,他们的区别在于他会先走缓存，走完缓存以后它会发出请求，请求的结果会用来更新缓存，也就是说你的下一次访问的如果时间足够请求返回的话，你就能拿到最新的数据了。
 
- ![image-20190704141149632](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704141149632.png)
+ ![image-20190704141149632](./images/image-20190704141149632.png)
 
 **cache-only**
 
 > 只会去缓存里拿数据，缓存没有就失败了
 
-![image-20190704141225080](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704141225080.png)
+![image-20190704141225080](./images/image-20190704141225080.png)
 
 **network-only**
 
 > network-only 只请求线上，不读写缓存。
 
-![image-20190704141255157](/Users/qiangran/Library/Application Support/typora-user-images/image-20190704141255157.png)
+![image-20190704141255157](./images/image-20190704141255157.png)
 
 
 
